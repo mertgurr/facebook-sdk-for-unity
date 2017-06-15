@@ -308,6 +308,21 @@ namespace Facebook.Unity.Mobile.Android
             refreshCurrentAccessToken.Call();
         }
 
+        public override void SetMockAccessToken(string accessToken, string applicationId, string userId, FacebookDelegate<IAccessTokenRefreshResult> callback)
+        {
+            var refreshCurrentAccessToken = new JavaMethodCall<IAccessTokenRefreshResult>(
+                this,
+                "SetMockAccessToken");
+            MethodArguments args = new MethodArguments();
+
+            args.AddString("accessToken", accessToken);
+            args.AddString("applicationId", applicationId);
+            args.AddString("userId", userId);
+
+            refreshCurrentAccessToken.Callback = callback;
+            refreshCurrentAccessToken.Call(args);
+        }
+
         protected override void SetShareDialogMode(ShareDialogMode mode)
         {
             this.CallFB("SetShareDialogMode", mode.ToString());

@@ -292,6 +292,11 @@ namespace Facebook.Unity.Mobile.IOS
                 System.Convert.ToInt32(CallbackManager.AddFacebookDelegate(callback)));
         }
 
+        public override void SetMockAccessToken(string accessToken, string applicationId, string userId, FacebookDelegate<IAccessTokenRefreshResult> callback)
+        {
+
+        }
+
         protected override void SetShareDialogMode(ShareDialogMode mode)
         {
             this.iosWrapper.SetShareDialogMode((int)mode);

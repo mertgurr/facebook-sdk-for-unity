@@ -36,5 +36,7 @@ namespace Facebook.Unity.Mobile
 
         void RefreshCurrentAccessToken(
             FacebookDelegate<IAccessTokenRefreshResult> callback);
+
+        void SetMockAccessToken(string accessToken, string applicationId, string userId, FacebookDelegate<IAccessTokenRefreshResult> callback);
     }
 }

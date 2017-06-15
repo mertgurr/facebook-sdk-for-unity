@@ -900,7 +900,13 @@ namespace Facebook.Unity
             {
                 Mobile.MobileFacebookImpl.RefreshCurrentAccessToken(callback);
             }
+            public static void SetMockAccessToken(string accessToken, string applicationId, string userId, FacebookDelegate<IAccessTokenRefreshResult> callback = null)
+            {
+                Mobile.MobileFacebookImpl.SetMockAccessToken(accessToken, applicationId, userId, callback);
+            }
         }
+
+
 
         /// <summary>
         /// Contains code specific to the Android Platform.

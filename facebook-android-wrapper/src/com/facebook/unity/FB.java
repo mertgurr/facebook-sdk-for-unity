@@ -350,6 +350,23 @@ public class FB {
                 });
     }
 
+    @UnityCallable
+    public static void SetMockAccessToken(String paramsStr) {
+        FB.LogMethodCall("SetMockAccessToken", paramsStr);
+
+        UnityParams unityParams = UnityParams.parse(paramsStr);
+        final UnityMessage unityMessage = new UnityMessage("OnSetMockAccessTokenComplete");
+
+        String accessToken = unityParams.getString("accessToken");
+        String applicationId = unityParams.getString("applicationId");
+        String userId = unityParams.getString("userId");
+
+        AccessToken mockAccessToken = new AccessToken(accessToken, applicationId, userId, null, null, null, null, null);
+        AccessToken.setCurrentAccessToken(mockAccessToken);
+
+        unityMessage.send();
+    }
+
     /**
      * Provides the key hash to solve the openSSL issue with Amazon
      * @return key hash

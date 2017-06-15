@@ -64,6 +64,8 @@ namespace Facebook.Unity.Mobile
         public abstract void RefreshCurrentAccessToken(
             FacebookDelegate<IAccessTokenRefreshResult> callback);
 
+        public abstract void SetMockAccessToken(string accessToken, string applicationId, string userId, FacebookDelegate<IAccessTokenRefreshResult> callback);
+
         public override void OnLoginComplete(ResultContainer resultContainer)
         {
             var result = new LoginResult(resultContainer);
