@@ -283,7 +283,7 @@ namespace Facebook.Unity.Editor
             this.OnRefreshCurrentAccessTokenComplete(new ResultContainer(result));
         }
 
-        public void SetMockAccessToken(FacebookDelegate<IAccessTokenRefreshResult> callback)
+        public void SetMockAccessToken(string accessToken, string applicationId, string userId, FacebookDelegate<IAccessTokenRefreshResult> callback)
         {
 
         }
